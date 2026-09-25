@@ -50,13 +50,13 @@ p{margin:.8rem 0}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .card{display:block;border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff;text-decoration:none;color:var(--ink);transition:.16s ease}
-.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#d6deec}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#d8cbc5}
 .card p{color:var(--muted);margin-bottom:0}
 .card .meta,.meta{font-size:.78rem;font-weight:780;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
 .card-arrow{display:inline-block;margin-top:16px;color:var(--burgundy);font-weight:800;font-size:.92rem}
-.notice{background:var(--soft-blue);border:1px solid #dce6ff;border-radius:14px;padding:14px 17px;margin:22px 0;color:#31446d}
+.notice{background:var(--olive-soft);border:1px solid #daddbd;border-radius:14px;padding:14px 17px;margin:22px 0;color:#51552a}
 .notice.subtle{background:var(--soft);border-color:var(--line);color:var(--muted)}
-.callout{border-left:4px solid var(--accent);padding:8px 0 8px 20px;margin:30px 0;color:#344054}
+.callout{border-left:4px solid var(--accent);padding:8px 0 8px 20px;margin:30px 0;color:#5f5154}
 .callout strong{color:var(--ink)}
 .checks{padding-left:1.2rem}
 .checks li{margin:.55rem 0}
