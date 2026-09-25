@@ -142,3 +142,16 @@ th{background:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacin
   .kpi-grid{grid-template-columns:1fr}
   .card{padding:20px}
 }
+
+
+/* Internal review page */
+.review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
+.review-card{border:1px solid var(--line);border-radius:20px;padding:16px;background:#fff;box-shadow:var(--shadow)}
+.review-card img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:14px;background:var(--soft)}
+.review-card h2{font-size:1.1rem;margin:14px 0 6px}
+.review-card p{font-size:.86rem;color:var(--muted);margin:.4rem 0}
+.review-status{display:inline-flex;border-radius:999px;padding:6px 10px;background:var(--olive-soft);color:var(--olive-dark);font-size:.7rem;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
+.review-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.review-actions .btn{font-size:.8rem;padding:9px 12px}
+@media(max-width:900px){.review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.review-grid{grid-template-columns:1fr}}
