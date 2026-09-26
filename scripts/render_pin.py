@@ -95,7 +95,10 @@ def render(spec_path):
     draw.rectangle((0, panel_y, 18, H), fill=OLIVE)
 
     brand_f = font(FONT_BOLD, 25)
-    draw.text((64, panel_y + 54), "WORKFLOW GUIDE", font=brand_f, fill=OLIVE)\n\n    commerce_f = font(FONT_BOLD, 20)\n    draw.text((64, panel_y + 91), "KONKRETER AMAZON-FUND · DIREKTER PRODUKTLINK AUF ZIELSEITE", font=commerce_f, fill=MUTED)
+    draw.text((64, panel_y + 54), "WORKFLOW GUIDE", font=brand_f, fill=OLIVE)
+
+    commerce_f = font(FONT_BOLD, 20)
+    draw.text((64, panel_y + 91), "KONKRETER AMAZON-FUND · DIREKTER PRODUKTLINK AUF ZIELSEITE", font=commerce_f, fill=MUTED)
 
     title_f = font(FONT_BOLD, 68)
     title_lines = wrap_text(draw, spec["title"], title_f, 870)
