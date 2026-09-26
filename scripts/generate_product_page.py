@@ -84,7 +84,7 @@ def structured_data(spec, canonical):
         ],
     }
     raw = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
-    return '<script type="application/ld+json">' + raw.replace("</", "<\/") + "</script>"
+    return '<script type="application/ld+json">' + raw.replace("</", "<\\/") + "</script>"
 
 def generate(spec_path):
     spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
