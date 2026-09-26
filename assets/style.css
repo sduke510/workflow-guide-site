@@ -250,3 +250,25 @@ th{background:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacin
   .alternate-offers-head{align-items:flex-start;flex-direction:column;gap:2px}
   .offer-card{align-items:flex-start;flex-direction:column}
 }
+
+
+/* Direct SaaS affiliate offer */
+.saas-offer{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  align-items:center;
+  margin:18px 0 30px;
+  padding:18px 20px;
+  border:2px solid var(--burgundy);
+  border-radius:18px;
+  background:linear-gradient(135deg,#fff,var(--cream));
+  box-shadow:0 12px 30px rgba(75,23,37,.08);
+}
+.saas-offer strong{display:block;font-size:1.15rem;margin:.15rem 0}
+.saas-offer p{margin:.25rem 0 0;color:var(--muted);font-size:.9rem;line-height:1.5}
+.saas-offer .btn{min-width:210px;text-align:center}
+@media(max-width:620px){
+  .saas-offer{grid-template-columns:1fr;padding:16px}
+  .saas-offer .btn{width:100%;min-width:0}
+}
