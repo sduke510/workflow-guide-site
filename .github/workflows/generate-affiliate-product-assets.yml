@@ -11,6 +11,7 @@ on:
       - 'scripts/render_pin.py'
       - 'scripts/update_sitemap.py'
       - 'scripts/backfill_product_seo.py'
+      - 'scripts/validate_affiliate_pages.py'
       - '.github/workflows/generate-affiliate-product-assets.yml'
   workflow_dispatch:
 
