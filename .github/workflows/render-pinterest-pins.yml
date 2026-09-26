@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: render-pinterest-pins
+  cancel-in-progress: true
+
 jobs:
   render:
     runs-on: ubuntu-latest
