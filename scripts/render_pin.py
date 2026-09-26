@@ -2,8 +2,10 @@
 import io
 import json
 import sys
+import time
 import textwrap
 import urllib.request
+from urllib.error import HTTPError, URLError
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
@@ -15,6 +17,8 @@ OLIVE = "#7b813f"
 CREAM = "#faf7f0"
 WHITE = "#ffffff"
 MUTED = "#e7ddd4"
+
+IMAGE_CACHE = {}
 
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_REGULAR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
@@ -38,9 +42,26 @@ def wrap_text(draw, text, fnt, max_width):
     return lines
 
 def download_image(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "WorkflowGuidePinRenderer/1.0"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return Image.open(io.BytesIO(resp.read())).convert("RGB")
+    if url in IMAGE_CACHE:
+        return IMAGE_CACHE[url].copy()
+
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 WorkflowGuidePinRenderer/2.0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+    })
+    last_error = None
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                image = Image.open(io.BytesIO(resp.read())).convert("RGB")
+                IMAGE_CACHE[url] = image
+                return image.copy()
+        except (HTTPError, URLError, TimeoutError) as exc:
+            last_error = exc
+            if attempt < 3:
+                time.sleep(2 ** attempt)
+
+    raise RuntimeError(f"Could not download editorial image after retries: {url}") from last_error
 
 def render(spec_path):
     spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
