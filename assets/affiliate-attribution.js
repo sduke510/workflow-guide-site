@@ -5,12 +5,12 @@
   // until the channel-specific IDs are created in Amazon PartnerNet.
   const DEFAULT_TAG = "workflowgui02-21";
   const TAGS = {
-    pinterest: DEFAULT_TAG,
-    youtube: DEFAULT_TAG,
-    instagram: DEFAULT_TAG,
-    tiktok: DEFAULT_TAG,
-    seo: DEFAULT_TAG,
-    direct: DEFAULT_TAG,
+    pinterest: "workflowpinterest-21",
+    youtube: "workflowyoutube-21",
+    instagram: "workflowinstagram-21",
+    tiktok: "workflowtiktok-21",
+    seo: "workflowseo-21",
+    direct: "workflowdirect-21",
   };
 
   const params = new URLSearchParams(window.location.search);
