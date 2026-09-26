@@ -29,7 +29,21 @@ jobs:
           fetch-depth: 0
 
       - name: Generate product pages and pin specs
-        run: python3 scripts/generate_product_page.py product_specs/*.json
+        run: |
+          set -o pipefail
+          python3 scripts/generate_product_page.py product_specs/*.json 2>&1 | tee /tmp/product-generation.log
+
+      - name: Persist product generation failure
+        if: failure()
+        run: |
+          mkdir -p docs
+          cp /tmp/product-generation.log docs/latest-generation-error.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/latest-generation-error.txt
+          git commit -m "Record affiliate generation failure" || true
+          git pull --rebase origin main
+          git push || true
 
       - name: Generate SEO and short-form specs
         run: python3 scripts/generate_distribution_assets.py product_specs/*.json
