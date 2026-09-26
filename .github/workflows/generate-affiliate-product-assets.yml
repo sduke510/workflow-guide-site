@@ -1,0 +1,39 @@
+name: Generate Affiliate Product Assets
+
+on:
+  push:
+    paths:
+      - 'product_specs/*.json'
+      - 'templates/product-landing.html'
+      - 'scripts/generate_product_page.py'
+      - '.github/workflows/generate-affiliate-product-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-affiliate-product-assets
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Generate product pages and pin specs
+        run: python3 scripts/generate_product_page.py product_specs/*.json
+      - name: Commit generated product assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pages/*.html pin_specs/*.json
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+            exit 0
+          fi
+          git commit -m "Generate affiliate product pages and pin specs"
+          git pull --rebase origin main
+          git push
