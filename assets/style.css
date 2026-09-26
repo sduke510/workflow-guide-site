@@ -234,3 +234,19 @@ th{background:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacin
   .product-visual{min-height:340px;border-radius:18px}
   .product-shopline{font-size:.76rem}
 }
+
+
+/* Multi-offer commerce block */
+.alternate-offers{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.alternate-offers-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:8px}
+.alternate-offers-head strong{font-size:.9rem;color:var(--ink)}
+.alternate-offers-head span{font-size:.7rem;color:var(--muted)}
+.offer-card{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 12px;border:1px solid var(--line);border-radius:11px;text-decoration:none;color:var(--ink);background:var(--cream);margin-top:8px}
+.offer-card:hover{border-color:#cab8af;background:#fff}
+.offer-card span{display:flex;flex-direction:column;line-height:1.3}
+.offer-card small{font-size:.72rem;color:var(--muted);font-weight:500}
+.offer-card b{font-size:.78rem;color:var(--burgundy);white-space:nowrap}
+@media(max-width:620px){
+  .alternate-offers-head{align-items:flex-start;flex-direction:column;gap:2px}
+  .offer-card{align-items:flex-start;flex-direction:column}
+}
