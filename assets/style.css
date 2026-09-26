@@ -155,3 +155,82 @@ th{background:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacin
 .review-actions .btn{font-size:.8rem;padding:9px 12px}
 @media(max-width:900px){.review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.review-grid{grid-template-columns:1fr}}
+
+
+/* Conversion-first product pages v2 */
+.product-hero{
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+  gap:34px;
+  align-items:start;
+  padding:34px 0 24px;
+}
+.product-copy{order:1;padding-top:4px}
+.product-visual{order:2;min-height:500px}
+.product-copy h1{font-size:clamp(2.2rem,4.7vw,4.15rem);margin:.16em 0 .2em}
+.product-copy .lead{margin-bottom:14px}
+.product-box{
+  margin-top:16px;
+  background:#fff;
+  border:2px solid var(--burgundy);
+  box-shadow:0 18px 40px rgba(75,23,37,.10);
+  padding:24px;
+}
+.product-box .meta{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:6px 10px;
+  background:var(--olive-soft);
+  color:var(--olive-dark);
+  letter-spacing:.055em;
+}
+.product-shopline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  margin:10px 0 14px;
+  padding:11px 13px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--cream);
+  font-size:.82rem;
+  line-height:1.35;
+  color:var(--muted);
+}
+.product-shopline strong{color:var(--ink)}
+.btn.amazon.primary-buy{
+  min-height:64px;
+  flex-direction:column;
+  gap:1px;
+  padding:10px 18px;
+  box-shadow:0 10px 24px rgba(75,23,37,.18);
+}
+.btn.amazon.primary-buy .buy-main{font-size:1.05rem;line-height:1.2}
+.btn.amazon.primary-buy .buy-sub{font-size:.72rem;font-weight:650;opacity:.84;line-height:1.2}
+.product-direct-note{
+  margin:10px 0 0;
+  padding:10px 12px;
+  border-radius:11px;
+  background:var(--olive-soft);
+  color:#50552b;
+  font-size:.8rem;
+  line-height:1.45;
+}
+.product-disclosure{margin-bottom:0}
+@media(min-width:901px){
+  .product-copy{position:sticky;top:88px}
+}
+@media(max-width:900px){
+  .product-copy{order:1}
+  .product-visual{order:2;min-height:430px}
+  .product-hero{padding-top:22px}
+}
+@media(max-width:620px){
+  .product-page{width:min(100% - 24px,1040px)}
+  .product-hero{gap:18px}
+  .product-copy h1{font-size:clamp(2rem,10vw,3rem)}
+  .product-copy .lead{font-size:1rem}
+  .product-box{padding:18px;border-radius:18px}
+  .product-visual{min-height:340px;border-radius:18px}
+  .product-shopline{font-size:.76rem}
+}
