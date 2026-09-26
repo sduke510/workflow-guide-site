@@ -1,0 +1,56 @@
+{
+  "id": "WG002",
+  "series": "WORKFLOW GUIDE · DIGITAL EINFACH ERKLÄRT",
+  "title": "Warum dein Handy ab etwa 80 % langsamer lädt",
+  "narration": "Dein Ladegerät wird ab ungefähr achtzig Prozent nicht plötzlich schlechter. Das Smartphone bremst den Ladevorgang absichtlich. Lithium-Ionen-Akkus können am Anfang relativ schnell Energie aufnehmen. Deshalb ist die erste Strecke beim Laden oft deutlich schneller. Je voller der Akku wird, desto vorsichtiger steuert das Gerät den Ladestrom. Apple beschreibt bei seinen Lithium-Ionen-Akkus zum Beispiel eine schnelle Ladephase bis ungefähr achtzig Prozent und danach eine langsamere Phase. Der Grund ist nicht, dich warten zu lassen. Weniger Ladestrom reduziert Wärme und Belastung, wenn der Akku schon fast voll ist. Moderne Geräte können den Ladevorgang außerdem zeitweise oberhalb von achtzig Prozent verzögern, wenn sie erwarten, dass das Smartphone lange am Ladegerät bleibt. So soll die Zeit reduziert werden, die der Akku vollständig geladen und gleichzeitig warm verbringt. Deshalb kann die letzte Strecke von achtzig auf hundert Prozent überraschend lange dauern. Das ist in vielen Fällen kein Defekt, sondern Teil des Batteriemanagements. Praktisch heißt das: Wenn du schnell los musst, bringen dir die ersten achtzig Prozent oft am meisten Ladegeschwindigkeit. Welche Akku-Regel soll ich als Nächstes prüfen?",
+  "question": "Welche Akku-Regel soll ich als Nächstes prüfen?",
+  "sources": [
+    "https://www.apple.com/de/batteries/why-lithium-ion/",
+    "https://support.apple.com/de-de/108055"
+  ],
+  "scenes": [
+    {
+      "headline": "Ab 80 % plötzlich langsam?",
+      "body": "Das ist oft Absicht – nicht automatisch ein kaputtes Ladegerät.",
+      "visual": "battery",
+      "takeaway": "Der Akku wird zum Ende hin vorsichtiger geladen.",
+      "weight": 1
+    },
+    {
+      "headline": "Phase 1: schnell Energie rein",
+      "body": "Bei niedrigem Ladezustand kann der Akku relativ schnell geladen werden.",
+      "visual": "battery",
+      "takeaway": "Die ersten Prozent fühlen sich deshalb besonders schnell an.",
+      "weight": 1
+    },
+    {
+      "headline": "Phase 2: Strom wird reduziert",
+      "body": "Je voller der Akku, desto stärker kann das Gerät den Ladestrom begrenzen.",
+      "visual": "battery",
+      "takeaway": "Weniger Strom bedeutet meist auch weniger Wärme.",
+      "weight": 1.2
+    },
+    {
+      "headline": "Wärme ist der Gegenspieler",
+      "body": "Laden erzeugt Wärme. Zu viel davon belastet Lithium-Ionen-Akkus.",
+      "visual": "battery",
+      "takeaway": "Batteriemanagement versucht Hitze und Stress zu begrenzen.",
+      "weight": 1.2
+    },
+    {
+      "headline": "Manchmal wartet das Handy bei 80 %",
+      "body": "Optimiertes Laden kann die letzte Strecke bewusst verzögern, wenn das Gerät lange am Kabel bleibt.",
+      "visual": "battery",
+      "takeaway": "Das Ziel ist weniger Zeit bei voller Ladung.",
+      "weight": 1.25
+    },
+    {
+      "headline": "Also: meistens kein Fehler",
+      "body": "Die letzten 20 Prozent dürfen deutlich länger dauern.",
+      "visual": "battery",
+      "takeaway": "Schnell los? Die ersten ~80 % sind oft die wichtige Strecke.",
+      "weight": 1
+    }
+  ],
+  "output": "assets/explainers/WG002.mp4"
+}
