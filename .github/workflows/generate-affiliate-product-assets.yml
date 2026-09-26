@@ -10,6 +10,7 @@ on:
       - 'scripts/render_short.py'
       - 'scripts/render_pin.py'
       - 'scripts/update_sitemap.py'
+      - 'scripts/backfill_product_seo.py'
       - '.github/workflows/generate-affiliate-product-assets.yml'
   workflow_dispatch:
 
@@ -47,6 +48,9 @@ jobs:
 
       - name: Generate SEO and short-form specs
         run: python3 scripts/generate_distribution_assets.py product_specs/*.json
+
+      - name: Backfill structured data
+        run: python3 scripts/backfill_product_seo.py
 
       - name: Update sitemap
         run: python3 scripts/update_sitemap.py
