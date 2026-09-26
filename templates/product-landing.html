@@ -15,6 +15,7 @@
 <meta property="og:image" content="{{EDITORIAL_IMAGE_URL}}">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/style.css">
+{{STRUCTURED_DATA}}
 </head>
 <body class="has-mobile-buy">
 <header class="site-header"><div class="wrap"><nav aria-label="Hauptnavigation"><a class="brand" href="../index.html"><span class="brand-mark">WG</span>Workflow Guide</a><div class="links"><a href="../index.html#guides">Alle Guides</a></div></nav></div></header>
@@ -28,7 +29,7 @@
     <div class="product-photo-note">{{IMAGE_DISCLOSURE}}</div>
   </div>
   <div class="product-copy">
-    <div class="product-kicker">Werbung · konkreter Amazon-Fund</div>
+    <div class="product-kicker">Werbung · konkreter Affiliate-Fund</div>
     <h1>{{H1}}</h1>
     <p class="lead">{{LEAD}}</p>
     <div class="product-box">
@@ -44,7 +45,8 @@
       </div>
       <a class="btn amazon primary-buy" href="{{AFFILIATE_URL}}" target="_blank" rel="sponsored noopener"><span class="buy-main">{{CTA}}</span><span class="buy-sub">Direkt auf Amazon.de · konkrete Produktseite ↗</span></a>
       <p class="product-direct-note">Kein weiterer Zwischenschritt: Dieser Button öffnet direkt den ausgewählten Artikel auf Amazon.de. Preis, Varianten und Lieferzeit werden dort aktuell angezeigt.</p>
-      <p class="product-disclosure"><strong>Affiliate-Hinweis:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Für dich entsteht durch Workflow Guide kein zusätzlicher Aufpreis.</p>
+      {{ALTERNATE_OFFERS}}
+      <p class="product-disclosure"><strong>Affiliate-Hinweis:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Auch andere gekennzeichnete Shop-Links können Partnerlinks sein. Für dich entsteht durch Workflow Guide kein zusätzlicher Aufpreis.</p>
     </div>
   </div>
 </section>
