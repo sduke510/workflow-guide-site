@@ -1,0 +1,28 @@
+name: Validate affiliate pages
+
+on:
+  push:
+    paths:
+      - 'pages/**'
+      - 'templates/**'
+      - 'pin_specs/**'
+      - 'scripts/validate_affiliate_pages.py'
+      - '.github/workflows/validate-affiliate-pages.yml'
+  pull_request:
+    paths:
+      - 'pages/**'
+      - 'templates/**'
+      - 'pin_specs/**'
+      - 'scripts/validate_affiliate_pages.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate conversion and compliance gates
+        run: python3 scripts/validate_affiliate_pages.py
