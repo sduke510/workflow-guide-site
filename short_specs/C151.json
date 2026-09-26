@@ -1,0 +1,38 @@
+{
+  "video_id": "V151",
+  "content_id": "C151",
+  "product_id": "P020",
+  "image_url": "https://images.unsplash.com/photo-1599202937077-3f7cdc53f2e1?auto=format&fit=crop&w=1600&h=1600&q=88",
+  "image_disclosure": "Stimmungsbild für die Produktkategorie, nicht die exakte Amazon-Produktabbildung. Foto: Andrea Davis / Unsplash.",
+  "badge": "SCHLAFZIMMER",
+  "hook": "Ganzjahresdecke: Größe zuerst prüfen",
+  "scenes": [
+    {
+      "headline": "Ganzjahresdecke: Größe zuerst prüfen",
+      "body": "Konkreter Fund · schneller Produkt-Check"
+    },
+    {
+      "headline": "Warum interessant?",
+      "body": "Konkreter Bettdecken-Fund\nDirekt zur Amazon-Produktseite"
+    },
+    {
+      "headline": "Vor dem Kauf prüfen",
+      "body": "Benötigte Deckenmaße vor dem Kauf festlegen.\nMaterial- und Ausführungsangaben beim Artikel prüfen."
+    },
+    {
+      "headline": "Produkt ansehen",
+      "body": "Zielseite öffnen → direkter Link zum ausgewählten Artikel auf Amazon.de"
+    }
+  ],
+  "caption": "Werbung | Ganzjahresdecke: Größe zuerst prüfen Auf der Zielseite findest du den konkreten Fund und einen direkten Produktlink zu Amazon.de. Produktdetails, Preis, Varianten und Lieferzeit bitte beim Shop prüfen.",
+  "cta": "Produkt über die Zielseite ansehen",
+  "landing_url": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-siebenschlaefer-ganzjahresdecke.html",
+  "output": "assets/shorts/C151.mp4",
+  "platforms": [
+    "youtube_shorts",
+    "instagram_reels",
+    "tiktok"
+  ],
+  "disclosure": "Werbung · Affiliate-Link auf Zielseite",
+  "status": "READY_FOR_RENDER"
+}

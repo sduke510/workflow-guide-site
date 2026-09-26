@@ -1,0 +1,52 @@
+{
+  "seo": {
+    "content_id": "C147",
+    "product_id": "P014",
+    "landing_url": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-mepal-bento-box.html",
+    "primary_query": "Mepal Bento Box",
+    "search_intent": "commercial_research",
+    "title": "Mepal Bento Box: konkreter Amazon-Fund",
+    "meta_description": "Konkreter Amazon-Fund für eine Mepal Bento Box mit kurzem Auswahl-Check und direktem Produktlink zu Amazon.de.",
+    "canonical": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-mepal-bento-box.html",
+    "indexable": true,
+    "sitemap_required": true
+  },
+  "short": {
+    "video_id": "V147",
+    "content_id": "C147",
+    "product_id": "P014",
+    "image_url": "https://images.unsplash.com/photo-1543352632-5a4b24e4d2a6?auto=format&fit=crop&w=1600&h=1600&q=88",
+    "image_disclosure": "Stimmungsbild für die Produktkategorie, nicht die exakte Amazon-Produktabbildung. Foto: Ella Olsson / Unsplash.",
+    "badge": "LUNCH & AUFBEWAHRUNG",
+    "hook": "Mepal Bento Box: Größe kurz prüfen",
+    "scenes": [
+      {
+        "headline": "Mepal Bento Box: Größe kurz prüfen",
+        "body": "Konkreter Fund · schneller Produkt-Check"
+      },
+      {
+        "headline": "Warum interessant?",
+        "body": "Konkreter Mepal-Fund\nDirekt zur Amazon-Produktseite"
+      },
+      {
+        "headline": "Vor dem Kauf prüfen",
+        "body": "Maße und gewünschte Variante direkt beim Artikel prüfen.\nLieferumfang und Materialangaben auf Amazon kontrollieren."
+      },
+      {
+        "headline": "Produkt ansehen",
+        "body": "Zielseite öffnen → direkter Link zum ausgewählten Artikel auf Amazon.de"
+      }
+    ],
+    "caption": "Werbung | Mepal Bento Box: Größe kurz prüfen Auf der Zielseite findest du den konkreten Fund und einen direkten Produktlink zu Amazon.de. Produktdetails, Preis, Varianten und Lieferzeit bitte beim Shop prüfen.",
+    "cta": "Produkt über die Zielseite ansehen",
+    "landing_url": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-mepal-bento-box.html",
+    "output": "assets/shorts/C147.mp4",
+    "platforms": [
+      "youtube_shorts",
+      "instagram_reels",
+      "tiktok"
+    ],
+    "disclosure": "Werbung · Affiliate-Link auf Zielseite",
+    "status": "READY_FOR_RENDER"
+  }
+}

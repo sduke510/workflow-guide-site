@@ -1,0 +1,52 @@
+{
+  "seo": {
+    "content_id": "C150",
+    "product_id": "P007",
+    "landing_url": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-delonghi-entkalker.html",
+    "primary_query": "De'Longhi Entkalker",
+    "search_intent": "commercial_research",
+    "title": "De'Longhi Entkalker: konkreter Amazon-Fund",
+    "meta_description": "Konkreter Amazon-Fund für De'Longhi Entkalker mit Geräte-Check und direktem Produktlink zu Amazon.de.",
+    "canonical": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-delonghi-entkalker.html",
+    "indexable": true,
+    "sitemap_required": true
+  },
+  "short": {
+    "video_id": "V150",
+    "content_id": "C150",
+    "product_id": "P007",
+    "image_url": "https://images.unsplash.com/photo-1680539882932-559b099446cc?auto=format&fit=crop&w=1600&h=1600&q=88",
+    "image_disclosure": "Stimmungsbild für die Produktkategorie, nicht die exakte Amazon-Produktabbildung. Foto: Harshal / Unsplash.",
+    "badge": "KAFFEEMASCHINENPFLEGE",
+    "hook": "De'Longhi Entkalker: vor dem Kauf kurz prüfen",
+    "scenes": [
+      {
+        "headline": "De'Longhi Entkalker: vor dem Kauf kurz prüfen",
+        "body": "Konkreter Fund · schneller Produkt-Check"
+      },
+      {
+        "headline": "Warum interessant?",
+        "body": "Konkreter De'Longhi-Fund\nDirekt zur Amazon-Produktseite"
+      },
+      {
+        "headline": "Vor dem Kauf prüfen",
+        "body": "Herstellerhinweise deines Geräts mit dem Artikel abgleichen.\nPackungsinhalt und benötigte Menge direkt auf Amazon prüfen."
+      },
+      {
+        "headline": "Produkt ansehen",
+        "body": "Zielseite öffnen → direkter Link zum ausgewählten Artikel auf Amazon.de"
+      }
+    ],
+    "caption": "Werbung | De'Longhi Entkalker: vor dem Kauf kurz prüfen Auf der Zielseite findest du den konkreten Fund und einen direkten Produktlink zu Amazon.de. Produktdetails, Preis, Varianten und Lieferzeit bitte beim Shop prüfen.",
+    "cta": "Produkt über die Zielseite ansehen",
+    "landing_url": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-delonghi-entkalker.html",
+    "output": "assets/shorts/C150.mp4",
+    "platforms": [
+      "youtube_shorts",
+      "instagram_reels",
+      "tiktok"
+    ],
+    "disclosure": "Werbung · Affiliate-Link auf Zielseite",
+    "status": "READY_FOR_RENDER"
+  }
+}
