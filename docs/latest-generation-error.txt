@@ -1,0 +1,8 @@
+/home/runner/work/workflow-guide-site/workflow-guide-site/scripts/generate_product_page.py:87: SyntaxWarning: invalid escape sequence '\/'
+  return '<script type="application/ld+json">' + raw.replace("</", "<\/") + "</script>"
+Traceback (most recent call last):
+  File "/home/runner/work/workflow-guide-site/workflow-guide-site/scripts/generate_product_page.py", line 187, in <module>
+    generate(path)
+  File "/home/runner/work/workflow-guide-site/workflow-guide-site/scripts/generate_product_page.py", line 163, in generate
+    raise ValueError(f"{spec_path}: unresolved template placeholders: {leftovers[:5]}")
+ValueError: product_specs/P007-C150.json: unresolved template placeholders: ['Guide"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://sduke510.github.io/workflow-guide-site/"},{"@type":"ListItem","position":2,"name":"De\'Longhi']
