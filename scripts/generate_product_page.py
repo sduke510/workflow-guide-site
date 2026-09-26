@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = ROOT / "templates" / "product-landing.html"
-TAG = "workflowguide-21"
+TAG = "workflowgui02-21"
 BASE = "https://sduke510.github.io/workflow-guide-site"
 
 def required(spec, key):
