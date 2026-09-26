@@ -1,0 +1,56 @@
+{
+  "id": "WG003",
+  "series": "WORKFLOW GUIDE · DIGITAL EINFACH ERKLÄRT",
+  "title": "Warum Passkeys phishing-resistenter sind als Passwörter",
+  "narration": "Das sicherste Passwort ist vielleicht gar kein Passwort. Ein Passkey ersetzt das klassische Passwort durch ein kryptografisches Schlüsselpaar. Vereinfacht gesagt gibt es einen privaten Schlüssel, der auf deinem Gerät oder in deinem geschützten Passkey-Manager bleibt, und einen öffentlichen Schlüssel, den die Website speichern darf. Beim Anmelden tippst du kein geheimes Wort ein. Du bestätigst dich zum Beispiel mit Fingerabdruck, Gesichtserkennung oder der Geräte-PIN. Danach beweist dein Gerät kryptografisch, dass es den passenden privaten Schlüssel besitzt. Der entscheidende Punkt gegen Phishing ist die Bindung an die echte Website oder App. Ein Passkey, der für eine bestimmte Domain erstellt wurde, wird auf einer täuschend ähnlichen Fake-Seite nicht einfach als passender Login angeboten. Genau deshalb sind Passkeys phishing-resistent. Noch ein Vorteil: Wird die Datenbank eines Dienstes gestohlen, liegt dort nicht dein wiederverwendbares Passwort, sondern nur der öffentliche Schlüssel. Daraus lässt sich der private Schlüssel nicht einfach ableiten. Passkeys lösen nicht jedes Sicherheitsproblem, aber sie nehmen zwei der größten Passwortschwächen gleichzeitig aus dem Spiel: Phishing und Passwort-Wiederverwendung. Würdest du dein wichtigstes Konto heute auf Passkeys umstellen?",
+  "question": "Würdest du dein wichtigstes Konto auf Passkeys umstellen?",
+  "sources": [
+    "https://support.google.com/accounts/answer/13548313?hl=de",
+    "https://developers.google.com/identity/passkeys?hl=de"
+  ],
+  "scenes": [
+    {
+      "headline": "Das sicherste Passwort?",
+      "body": "Vielleicht ist es gar kein Passwort.",
+      "visual": "passkey",
+      "takeaway": "Passkeys ersetzen das getippte Geheimnis.",
+      "weight": 1
+    },
+    {
+      "headline": "Zwei Schlüssel statt eines Passworts",
+      "body": "Privater Schlüssel bei dir. Öffentlicher Schlüssel beim Dienst.",
+      "visual": "passkey",
+      "takeaway": "Der Server braucht dein geheimes Passwort nicht.",
+      "weight": 1.25
+    },
+    {
+      "headline": "Du entsperrst nur dein Gerät",
+      "body": "Fingerabdruck, Gesicht oder Geräte-PIN bestätigt die Anmeldung.",
+      "visual": "passkey",
+      "takeaway": "Biometrie wird nicht als Passwort an die Website geschickt.",
+      "weight": 1.1
+    },
+    {
+      "headline": "Phishing läuft gegen eine Wand",
+      "body": "Der Passkey ist an die echte Website oder App gebunden.",
+      "visual": "passkey",
+      "takeaway": "Eine Fake-Domain bekommt nicht einfach deinen echten Passkey.",
+      "weight": 1.3
+    },
+    {
+      "headline": "Datenleck? Weniger Beute",
+      "body": "Beim Dienst liegt nur der öffentliche Schlüssel.",
+      "visual": "passkey",
+      "takeaway": "Der private Schlüssel lässt sich daraus nicht ableiten.",
+      "weight": 1.15
+    },
+    {
+      "headline": "Nicht perfekt – aber stark",
+      "body": "Passkeys lösen nicht jedes Problem, reduzieren aber Phishing und Passwort-Wiederverwendung.",
+      "visual": "passkey",
+      "takeaway": "Zwei große Passwortprobleme fallen gleichzeitig weg.",
+      "weight": 1.1
+    }
+  ],
+  "output": "assets/explainers/WG003.mp4"
+}
