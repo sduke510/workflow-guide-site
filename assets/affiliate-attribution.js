@@ -3,7 +3,7 @@
 
   // All channel tags intentionally fall back to the existing PartnerNet tracking ID
   // until the channel-specific IDs are created in Amazon PartnerNet.
-  const DEFAULT_TAG = "workflowguide-21";
+  const DEFAULT_TAG = "workflowgui02-21";
   const TAGS = {
     pinterest: DEFAULT_TAG,
     youtube: DEFAULT_TAG,
