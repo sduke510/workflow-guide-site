@@ -1,0 +1,56 @@
+{
+  "id": "WG001",
+  "series": "WORKFLOW GUIDE · DIGITAL EINFACH ERKLÄRT",
+  "title": "Inkognito-Modus: Was er wirklich versteckt",
+  "narration": "Inkognito macht dich nicht unsichtbar. Es räumt vor allem hinter dir auf. Wenn du ein privates Browserfenster öffnest, startet eine getrennte Sitzung. Nachdem du alle privaten Fenster geschlossen hast, speichert Chrome zum Beispiel den Verlauf und die während dieser Sitzung entstandenen Website-Daten nicht dauerhaft auf deinem Gerät. Das ist praktisch, wenn mehrere Personen denselben Computer benutzen oder du etwas suchen willst, das später nicht im Verlauf auftauchen soll. Aber jetzt kommt der Teil, den viele falsch verstehen: Online bist du deshalb nicht anonym. Die Webseiten, die du besuchst, können weiterhin Informationen über deine Verbindung bekommen. Auch Organisationen, die dein Netzwerk verwalten, etwa ein Arbeitgeber oder eine Schule, und dein Internetanbieter können je nach Verbindung weiterhin Aktivität sehen. Deine IP-Adresse wird durch Inkognito ebenfalls nicht einfach versteckt. Und Dinge, die du bewusst speicherst, bleiben: Downloads liegen weiter auf dem Gerät und angelegte Lesezeichen verschwinden nicht. Die beste Merkhilfe ist deshalb simpel: Inkognito schützt hauptsächlich deine lokale Browser-Spur. Es ist kein Unsichtbarkeitsmodus fürs Internet. Wenn du willst, erkläre ich als Nächstes, was ein VPN wirklich verändert – und was nicht.",
+  "question": "VPN oder Passkeys als Nächstes?",
+  "sources": [
+    "https://support.google.com/chrome/answer/95464?hl=de",
+    "https://support.mozilla.org/en-US/kb/common-myths-about-private-browsing"
+  ],
+  "scenes": [
+    {
+      "headline": "Inkognito ≠ unsichtbar",
+      "body": "Der Modus schützt weniger, als viele denken.",
+      "visual": "privacy",
+      "takeaway": "Privates Fenster = lokale Privatsphäre, nicht Anonymität.",
+      "weight": 1
+    },
+    {
+      "headline": "Was Inkognito wirklich macht",
+      "body": "Eine getrennte Sitzung. Verlauf und Sitzungsdaten werden nach dem Schließen nicht dauerhaft im Browser behalten.",
+      "visual": "privacy",
+      "takeaway": "Gut für gemeinsam genutzte Geräte.",
+      "weight": 1.25
+    },
+    {
+      "headline": "Webseiten sehen dich trotzdem",
+      "body": "Inkognito versteckt deine Verbindung nicht automatisch vor den Seiten, die du aufrufst.",
+      "visual": "privacy",
+      "takeaway": "Die Website verschwindet nicht aus dem Netzwerk.",
+      "weight": 1.15
+    },
+    {
+      "headline": "Netzwerk & Anbieter bleiben außerhalb",
+      "body": "Arbeitgeber, Schule oder Internetanbieter können je nach Netzwerk weiterhin Aktivität erkennen.",
+      "visual": "privacy",
+      "takeaway": "Inkognito arbeitet im Browser – nicht im ganzen Internet.",
+      "weight": 1.25
+    },
+    {
+      "headline": "IP-Adresse bleibt sichtbar",
+      "body": "Der Modus ersetzt weder VPN noch Anonymisierungsnetzwerk.",
+      "visual": "privacy",
+      "takeaway": "IP und Standort werden nicht automatisch maskiert.",
+      "weight": 1.1
+    },
+    {
+      "headline": "Downloads bleiben Downloads",
+      "body": "Dateien und Lesezeichen, die du bewusst speicherst, bleiben nach der Sitzung erhalten.",
+      "visual": "privacy",
+      "takeaway": "Inkognito räumt nicht dein ganzes Gerät auf.",
+      "weight": 1
+    }
+  ],
+  "output": "assets/explainers/WG001.mp4"
+}
