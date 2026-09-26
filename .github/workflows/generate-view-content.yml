@@ -38,13 +38,7 @@ jobs:
           for f in assets/explainers/*.mp4; do
             test -s "$f"
             duration=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$f")
-            python3 - "$f" "$duration" <<'PY'
-import sys
-p, d = sys.argv[1], float(sys.argv[2])
-if d < 60:
-    raise SystemExit(f"{p}: too short for the >1-minute view-first format ({d:.1f}s)")
-print(f"{p}: {d:.1f}s OK")
-PY
+            python3 -c 'import sys; p=sys.argv[1]; d=float(sys.argv[2]); print(f"{p}: {d:.1f}s OK") if d >= 60 else (_ for _ in ()).throw(SystemExit(f"{p}: too short for the >1-minute view-first format ({d:.1f}s)"))' "$f" "$duration"
           done
 
       - name: Commit generated explainers
