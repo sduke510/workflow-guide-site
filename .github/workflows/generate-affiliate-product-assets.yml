@@ -6,6 +6,10 @@ on:
       - 'product_specs/*.json'
       - 'templates/product-landing.html'
       - 'scripts/generate_product_page.py'
+      - 'scripts/generate_distribution_assets.py'
+      - 'scripts/render_short.py'
+      - 'scripts/render_pin.py'
+      - 'scripts/update_sitemap.py'
       - '.github/workflows/generate-affiliate-product-assets.yml'
   workflow_dispatch:
 
@@ -23,23 +27,37 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Generate product pages and pin specs
-        run: python3 scripts/generate_product_page.py product_specs/*.json
-      - name: Install pin renderer dependency
-        run: python3 -m pip install --upgrade pip pillow
-      - name: Render generated pin assets
+
+      - name: Generate product pages and distribution specs
+        run: |
+          python3 scripts/generate_product_page.py product_specs/*.json
+          python3 scripts/generate_distribution_assets.py product_specs/*.json
+          python3 scripts/update_sitemap.py
+
+      - name: Install media dependencies
+        run: |
+          python3 -m pip install --upgrade pip pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: Render Pinterest assets
         run: python3 scripts/render_pin.py pin_specs/*.json
+
+      - name: Render short-form video assets
+        run: python3 scripts/render_short.py short_specs/*.json
+
       - name: Validate affiliate assets
         run: python3 scripts/validate_affiliate_pages.py
+
       - name: Commit generated product assets
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add pages/*.html pin_specs/*.json assets/pins/*.jpg
+          git add pages/*.html pin_specs/*.json assets/pins/*.jpg distribution/*.json short_specs/*.json assets/shorts/*.mp4 sitemap.xml
           if git diff --cached --quiet; then
             echo "No generated changes."
             exit 0
           fi
-          git commit -m "Generate affiliate product pages and pin specs"
+          git commit -m "Generate affiliate distribution assets"
           git pull --rebase origin main
           git push
