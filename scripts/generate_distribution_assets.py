@@ -54,6 +54,13 @@ def generate(spec_path):
         f"Auf der Zielseite findest du den konkreten Fund und einen direkten Produktlink zu Amazon.de. "
         "Produktdetails, Preis, Varianten und Lieferzeit bitte beim Shop prüfen."
     )
+    landing_urls = {
+        "pinterest": f"{landing}?utm_source=pinterest&utm_medium=organic&utm_campaign=amazon_product&utm_content={cid}",
+        "youtube": f"{landing}?utm_source=youtube&utm_medium=organic_video&utm_campaign=amazon_product&utm_content={cid}",
+        "instagram": f"{landing}?utm_source=instagram&utm_medium=organic_reel&utm_campaign=amazon_product&utm_content={cid}",
+        "tiktok": f"{landing}?utm_source=tiktok&utm_medium=organic_video&utm_campaign=amazon_product&utm_content={cid}",
+    }
+
     short = {
         "video_id": f"V{cid[1:]}",
         "content_id": cid,
@@ -71,6 +78,7 @@ def generate(spec_path):
         "caption": caption,
         "cta": "Produkt über die Zielseite ansehen",
         "landing_url": landing,
+        "landing_urls": landing_urls,
         "output": f"assets/shorts/{cid}.mp4",
         "platforms": ["youtube_shorts", "instagram_reels", "tiktok"],
         "disclosure": "Werbung · Affiliate-Link auf Zielseite",
