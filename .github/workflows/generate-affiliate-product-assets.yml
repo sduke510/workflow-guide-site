@@ -28,11 +28,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Generate product pages and distribution specs
-        run: |
-          python3 scripts/generate_product_page.py product_specs/*.json
-          python3 scripts/generate_distribution_assets.py product_specs/*.json
-          python3 scripts/update_sitemap.py
+      - name: Generate product pages and pin specs
+        run: python3 scripts/generate_product_page.py product_specs/*.json
+
+      - name: Generate SEO and short-form specs
+        run: python3 scripts/generate_distribution_assets.py product_specs/*.json
+
+      - name: Update sitemap
+        run: python3 scripts/update_sitemap.py
 
       - name: Install media dependencies
         run: |
