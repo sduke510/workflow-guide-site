@@ -40,6 +40,12 @@
     "caption": "Werbung | Swiffer Nachfüllpackung: Packung kurz prüfen Auf der Zielseite findest du den konkreten Fund und einen direkten Produktlink zu Amazon.de. Produktdetails, Preis, Varianten und Lieferzeit bitte beim Shop prüfen.",
     "cta": "Produkt über die Zielseite ansehen",
     "landing_url": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-swiffer-staubmagnet.html",
+    "landing_urls": {
+      "pinterest": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-swiffer-staubmagnet.html?utm_source=pinterest&utm_medium=organic&utm_campaign=amazon_product&utm_content=C152",
+      "youtube": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-swiffer-staubmagnet.html?utm_source=youtube&utm_medium=organic_video&utm_campaign=amazon_product&utm_content=C152",
+      "instagram": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-swiffer-staubmagnet.html?utm_source=instagram&utm_medium=organic_reel&utm_campaign=amazon_product&utm_content=C152",
+      "tiktok": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-swiffer-staubmagnet.html?utm_source=tiktok&utm_medium=organic_video&utm_campaign=amazon_product&utm_content=C152"
+    },
     "output": "assets/shorts/C152.mp4",
     "platforms": [
       "youtube_shorts",

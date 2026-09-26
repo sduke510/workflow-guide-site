@@ -27,6 +27,12 @@
   "caption": "Werbung | Plisseerollo: erst das Fenstermaß prüfen Auf der Zielseite findest du den konkreten Fund und einen direkten Produktlink zu Amazon.de. Produktdetails, Preis, Varianten und Lieferzeit bitte beim Shop prüfen.",
   "cta": "Produkt über die Zielseite ansehen",
   "landing_url": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-sonello-plisseerollo.html",
+  "landing_urls": {
+    "pinterest": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-sonello-plisseerollo.html?utm_source=pinterest&utm_medium=organic&utm_campaign=amazon_product&utm_content=C149",
+    "youtube": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-sonello-plisseerollo.html?utm_source=youtube&utm_medium=organic_video&utm_campaign=amazon_product&utm_content=C149",
+    "instagram": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-sonello-plisseerollo.html?utm_source=instagram&utm_medium=organic_reel&utm_campaign=amazon_product&utm_content=C149",
+    "tiktok": "https://sduke510.github.io/workflow-guide-site/pages/amazon-fund-sonello-plisseerollo.html?utm_source=tiktok&utm_medium=organic_video&utm_campaign=amazon_product&utm_content=C149"
+  },
   "output": "assets/shorts/C149.mp4",
   "platforms": [
     "youtube_shorts",
