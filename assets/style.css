@@ -272,3 +272,23 @@ th{background:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacin
   .saas-offer{grid-template-columns:1fr;padding:16px}
   .saas-offer .btn{width:100%;min-width:0}
 }
+
+
+/* Conversion close-out CTA */
+.product-bottom-cta{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(250px,340px);
+  gap:22px;
+  align-items:center;
+  margin-top:4px;
+  padding:22px;
+  border:1px solid #dfe1c7;
+  border-radius:20px;
+  background:var(--olive-soft);
+}
+.product-bottom-cta strong{display:block;margin:.3rem 0 .2rem;font-size:1.2rem;color:var(--ink)}
+.product-bottom-cta p{margin:.25rem 0 0;color:#5b5f37;font-size:.9rem;line-height:1.5}
+.product-bottom-cta .btn{width:100%;min-height:56px;text-align:center}
+@media(max-width:700px){
+  .product-bottom-cta{grid-template-columns:1fr;padding:18px}
+}
