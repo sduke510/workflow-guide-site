@@ -158,7 +158,8 @@ def generate(spec_path):
     page = page.replace("{{ALTERNATE_OFFERS}}", render_alternate_offers(spec))
     page = page.replace("{{STRUCTURED_DATA}}", structured_data(spec, canonical))
 
-    leftovers = [part for part in page.split() if "{{" in part or "}}" in part]
+    import re
+    leftovers = re.findall(r"\{\{[A-Z0-9_]+\}\}", page)
     if leftovers:
         raise ValueError(f"{spec_path}: unresolved template placeholders: {leftovers[:5]}")
 
