@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TAG = "workflowguide-21"
+TAG = "workflowgui02-21"
 errors = []
 
 product_pages = sorted((ROOT / "pages").glob("amazon-fund-*.html"))
