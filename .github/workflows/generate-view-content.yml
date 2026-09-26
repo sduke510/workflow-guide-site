@@ -1,0 +1,61 @@
+name: Generate View-First Explainers
+
+on:
+  push:
+    paths:
+      - 'view_specs/*.json'
+      - 'scripts/render_explainer.py'
+      - '.github/workflows/generate-view-content.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-view-content
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install renderer dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pillow piper-tts
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+
+      - name: Render original explainer videos
+        run: python3 scripts/render_explainer.py view_specs/*.json
+
+      - name: Validate videos
+        run: |
+          for f in assets/explainers/*.mp4; do
+            test -s "$f"
+            duration=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$f")
+            python3 - "$f" "$duration" <<'PY'
+import sys
+p, d = sys.argv[1], float(sys.argv[2])
+if d < 60:
+    raise SystemExit(f"{p}: too short for the >1-minute view-first format ({d:.1f}s)")
+print(f"{p}: {d:.1f}s OK")
+PY
+          done
+
+      - name: Commit generated explainers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/explainers/*.mp4
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+            exit 0
+          fi
+          git commit -m "Render view-first explainer videos"
+          git pull --rebase origin main
+          git push
