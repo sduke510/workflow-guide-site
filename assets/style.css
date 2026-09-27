@@ -292,3 +292,29 @@ th{background:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacin
 @media(max-width:700px){
   .product-bottom-cta{grid-template-columns:1fr;padding:18px}
 }
+
+
+/* View-first explainer pages */
+.explainer-video-shell{
+  width:min(420px,100%);
+  margin:10px auto 28px;
+  padding:10px;
+  border-radius:28px;
+  background:#121829;
+  box-shadow:0 24px 60px rgba(24,26,42,.20);
+}
+.explainer-video{
+  display:block;
+  width:100%;
+  aspect-ratio:9/16;
+  border-radius:20px;
+  background:#0a1223;
+}
+.source-list{padding-left:1.2rem}
+.source-list li{margin:.55rem 0}
+.series-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.series-card{border:1px solid var(--line);border-radius:20px;padding:22px;background:#fff}
+.series-card .topic-chip{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef7f6;color:#245f5d;font-size:.72rem;font-weight:850;letter-spacing:.05em;text-transform:uppercase}
+.series-card h3{margin-top:12px;font-size:1.2rem}
+.series-card p{color:var(--muted)}
+@media(max-width:800px){.series-grid{grid-template-columns:1fr}}
