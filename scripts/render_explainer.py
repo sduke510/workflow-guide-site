@@ -8,7 +8,7 @@ import tempfile
 import wave
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 W, H = 720, 1280
@@ -25,6 +25,7 @@ GREEN = (110, 214, 142)
 RED = (242, 102, 104)
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_REGULAR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+CHARACTER_PATH = ROOT / "assets" / "character" / "mika.png"
 
 def fnt(path, size):
     return ImageFont.truetype(path, size=size)
@@ -109,8 +110,29 @@ def draw_generic(draw, t):
     draw.ellipse((360-r,610-r,360+r,610+r),outline=CYAN,width=8)
     draw.ellipse((320,570,400,650),fill=PINK)
 
+def load_character():
+    if not CHARACTER_PATH.exists():
+        return None
+    try:
+        return Image.open(CHARACTER_PATH).convert("RGBA")
+    except Exception:
+        return None
+
+def paste_character(img, character, scene_idx, progress):
+    if character is None:
+        return
+    # Mika appears mainly on hook, transitions and close; diagrams remain primary.
+    nudge = int(8 * math.sin(progress * math.pi * 2))
+    target_h = 405 if scene_idx == 0 else 340
+    ratio = target_h / character.height
+    target = character.resize((int(character.width * ratio), target_h), Image.Resampling.LANCZOS)
+    # Keep the host in the lower-right safe area.
+    x = W - target.width - 18
+    y = H - target.height - 112 + nudge
+    img.alpha_composite(target, (x, y))
+
 def draw_frame(spec, scene, scene_idx, scene_progress, total_progress, t):
-    img=BASE.copy()
+    img=BASE.copy().convert("RGBA")
     draw=ImageDraw.Draw(img)
     accent=[CYAN,PINK,YELLOW,GREEN][scene_idx%4]
 
@@ -165,15 +187,38 @@ def draw_frame(spec, scene, scene_idx, scene_progress, total_progress, t):
     draw.rounded_rectangle((50,1200,670,1210),radius=5,fill=(55,62,82))
     draw.rounded_rectangle((50,1200,50+int(620*total_progress),1210),radius=5,fill=accent)
 
+    character = load_character()
+    if scene_idx == 0 or scene_idx == len(spec["scenes"])-1 or scene_progress < 0.12:
+        paste_character(img, character, scene_idx, t)
+
     if scene_idx==len(spec["scenes"])-1:
         q=spec.get("question","")
         if q:
             draw.text((50,1230),q,font=fnt(FONT_BOLD,19),fill=CREAM)
-    return img
+    return img.convert("RGB")
 
-def synthesize(text, wav_path):
-    cmd=["piper","--model","de_DE-thorsten-medium","--length_scale","1.06","--output_file",str(wav_path)]
+def synthesize(text, wav_path, speaker=0):
+
+    # The emotional Thorsten model is permissively licensed and has multiple expressive speaker styles.
+    # speaker 0 = amused: warmer and more energetic than the previous neutral audiobook-like voice.
+    cmd=[
+        "piper",
+        "--model","de_DE-thorsten_emotional-medium",
+        "--speaker",str(speaker),
+        "--length_scale","0.94",
+        "--sentence_silence","0.12",
+        "--output_file",str(wav_path),
+    ]
     subprocess.run(cmd,input=text.encode("utf-8"),check=True)
+
+    # Tighten dynamics for phone speakers without making the voice sound like radio VO.
+    processed = wav_path.with_name(wav_path.stem + "-processed.wav")
+    subprocess.run([
+        "ffmpeg","-y","-loglevel","error","-i",str(wav_path),
+        "-af","highpass=f=75,acompressor=threshold=-18dB:ratio=2.2:attack=8:release=80,loudnorm=I=-16:TP=-1.5:LRA=7",
+        str(processed)
+    ],check=True)
+    processed.replace(wav_path)
 
 def wav_duration(path):
     with wave.open(str(path),"rb") as wf:
@@ -187,7 +232,7 @@ def render(spec_path):
     with tempfile.TemporaryDirectory() as td:
         td=Path(td)
         wav=td/"voice.wav"
-        synthesize(spec["narration"],wav)
+        synthesize(spec["narration"],wav,int(spec.get("voice_speaker",0)))
         duration=wav_duration(wav)
         # keep a clean finish and guarantee TikTok > 60 s for rewards-eligible format.
         total=max(duration+2.0,62.0)
