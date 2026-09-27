@@ -55,5 +55,8 @@
   "output": "assets/explainers/WG002.mp4",
   "host": "Mika",
   "voice_speaker": 0,
-  "ai_disclosure": true
+  "ai_disclosure": true,
+  "slug": "handy-laedt-ab-80-prozent-langsamer",
+  "description": "Warum Smartphones die letzten Prozent oft deutlich langsamer laden – und warum das meistens Absicht ist.",
+  "summary": "Je voller ein Lithium-Ionen-Akku wird, desto vorsichtiger steuert das Gerät den Ladestrom. Das reduziert Wärme und Belastung."
 }
