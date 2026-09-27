@@ -55,5 +55,8 @@
   "output": "assets/explainers/WG003.mp4",
   "host": "Mika",
   "voice_speaker": 0,
-  "ai_disclosure": true
+  "ai_disclosure": true,
+  "slug": "passkeys-phishing-resistent",
+  "description": "Passkeys ersetzen das getippte Passwort durch kryptografische Schlüssel und sind dadurch deutlich widerstandsfähiger gegen Phishing.",
+  "summary": "Der private Schlüssel bleibt bei dir; die Website bekommt nur den öffentlichen Teil. Ein Passkey ist außerdem an die echte Website oder App gebunden."
 }
