@@ -131,6 +131,36 @@ def paste_character(img, character, scene_idx, progress):
     y = H - target.height - 112 + nudge
     img.alpha_composite(target, (x, y))
 
+def caption_chunks(text, words_per_chunk=7):
+    words = str(text).replace("\n", " ").split()
+    chunks = []
+    i = 0
+    while i < len(words):
+        # Prefer ending a chunk at punctuation near the target length.
+        end = min(len(words), i + words_per_chunk)
+        for j in range(end - 1, max(i + 3, end - 3), -1):
+            if words[j].endswith((".", ",", "?", "!", ":")):
+                end = j + 1
+                break
+        chunks.append(" ".join(words[i:end]))
+        i = end
+    return chunks
+
+def draw_caption(draw, spec, total_progress):
+    chunks = caption_chunks(spec.get("narration", ""))
+    if not chunks:
+        return
+    idx = min(len(chunks) - 1, int(total_progress * len(chunks)))
+    txt = chunks[idx]
+    box=(46, 865, 674, 945)
+    draw.rounded_rectangle(box, radius=22, fill=(7, 12, 25, 215), outline=(75,214,210,120), width=2)
+    cap_font=fnt(FONT_BOLD, 27)
+    lines=wrap(draw,txt,cap_font,570,2)
+    yy=883
+    for line in lines:
+        draw.text((74,yy),line,font=cap_font,fill=WHITE)
+        yy+=32
+
 def draw_frame(spec, scene, scene_idx, scene_progress, total_progress, t):
     img=BASE.copy().convert("RGBA")
     draw=ImageDraw.Draw(img)
@@ -169,6 +199,9 @@ def draw_frame(spec, scene, scene_idx, scene_progress, total_progress, t):
         draw_passkey(draw,t)
     else:
         draw_generic(draw,t)
+
+    if spec.get("captions", True):
+        draw_caption(draw, spec, total_progress)
 
     # lower takeaway
     if scene.get("takeaway"):
