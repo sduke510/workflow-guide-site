@@ -55,5 +55,8 @@
   "output": "assets/explainers/WG001.mp4",
   "host": "Mika",
   "voice_speaker": 0,
-  "ai_disclosure": true
+  "ai_disclosure": true,
+  "slug": "inkognito-modus-wirklich",
+  "description": "Inkognito-Modus schützt deine lokale Browser-Spur – aber er macht dich im Internet nicht unsichtbar.",
+  "summary": "Inkognito ist vor allem praktisch, wenn andere später denselben Browser benutzen. Websites, Netzwerkbetreiber und Internetanbieter verschwinden dadurch nicht."
 }
